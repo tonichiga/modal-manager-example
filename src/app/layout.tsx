@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "@/lib/styles.css";
 import "./globals.css";
 import { modalList } from "@/controllers/modals";
-import ModalProviderWrapper from "@/providers/modal-provider-wapper";
-import "@4i/modal-manager/src/styles.css";
+// import "@4i/modal-manager/src/styles.css";
+import { ModalProvider } from "@/lib";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {children}
-        <ModalProviderWrapper modalList={modalList} />
+        <ModalProvider modalList={modalList} />
       </body>
     </html>
   );
